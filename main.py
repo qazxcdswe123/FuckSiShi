@@ -9,6 +9,8 @@ def read_file():
 # pop lines everytime it is called
 # command example
 # document.evaluate("//div[normalize-space(text())='TEXT to substitute']", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.click();
+
+
 def copyCommandToClipboard(i, lines):
     commands = []
     commands.append("try {")
@@ -19,7 +21,8 @@ def copyCommandToClipboard(i, lines):
             if '①' in line or '②' in line or '③' in line or '④' in line:
                 command = "console.log('" + line.strip() + "');"
             else:
-                command = "document.evaluate(\"//div[normalize-space(text())='" + line.strip() + "']\", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.click();"
+                command = "document.evaluate(`//div[normalize-space(text())='" + line.strip(
+                ) + "']`, document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.click();"
             commands.append(command)
             i -= 1
     commands.append("} catch (e) {}")
@@ -27,7 +30,6 @@ def copyCommandToClipboard(i, lines):
     print('\n'.join(commands))
     print("Copied to clipboard")
     print("------------------------------------------------------")
-
 
 
 if __name__ == "__main__":
