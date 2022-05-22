@@ -31,6 +31,9 @@ def copyCommandToClipboard(i, lines):
     print("Copied to clipboard")
     print("------------------------------------------------------")
 
+def saveRestLines(lines):
+    with open("rest.txt", "w") as f:
+        f.writelines(lines)
 
 if __name__ == "__main__":
     import pyperclip
@@ -39,3 +42,4 @@ if __name__ == "__main__":
     while i != -1:
         copyCommandToClipboard(i, lines)
         i = int(input("How many questions are there, -1 to exit: "))
+    saveRestLines(lines)
