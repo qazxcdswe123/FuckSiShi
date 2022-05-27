@@ -1,4 +1,13 @@
 # Fuck Stupid Timewaster SiShi (实屎)
+
+- 关键词
+  - 华南师范大学
+  - 四史
+  - 砺儒云课堂
+  - 脚本
+  - 自动化答题
+  - 答案
+ 
 ## Quick Start
 1. 修改 `final.txt` . 删除所有开刷 **之前** 的答案 (对照 pdf 或 docx 文件)
 2. `pip3 install pyperclip`
